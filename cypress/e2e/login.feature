@@ -4,10 +4,10 @@ Feature: Login Functionality
 
     Scenario: Validate Login with right credentials
         Given the user is on the login page
-        When the user enters their valid username "standard_user" and valid password "secret_sauce"
-        And the user clicks the login button
-        Then the user should be redirected to the Home page
-        And the user should see products
+        When the user enters their valid username "standard_user"
+        And the user enters valid password "secret_sauce"
+        When the user clicks the login button
+        Then the user should be redirected to the Home page and the user should see products
 
     Scenario: Invalid User Login (Incorrect Password)
         Given the user is on the login page

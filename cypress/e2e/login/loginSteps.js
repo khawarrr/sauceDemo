@@ -3,21 +3,20 @@ import LoginPage from "./loginPage";
 
 Given("the user is on the login page", () => {
     LoginPage.visitLoginPage(); // Use the Page Object method
-  });
-  
-  When("the user enters their valid username {string} and valid password {string}", (username, password) => {
+});
+
+When("the user enters their valid username {string}", (username) => {
     LoginPage.enterUsername(username); // Use the Page Object method
+});
+
+And("the user enters valid password {string}", (password) => {
     LoginPage.enterPassword(password); // Use the Page Object method
-  });
-  
-  And("the user clicks the login button", () => {
+});
+
+Then("the user clicks the login button", () => {
     LoginPage.clickLoginButton(); // Use the Page Object method
-  });
-  
-  Then("the user should be redirected to the Home page", () => {
+});
+
+Then("the user should be redirected to the Home page and the user should see products", () => {
     LoginPage.isLoggedIn(); // Use the Page Object method for verification
-  });
-  
-  And("the user should see products", () => {
-    // You can add verification steps for products if needed
-  });
+});
