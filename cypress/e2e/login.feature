@@ -1,4 +1,4 @@
-Feature: Login FUnctionality
+Feature: Login Functionality
 
     User should be able to log in with the right credentials
 
@@ -9,12 +9,12 @@ Feature: Login FUnctionality
         Then the user should be redirected to the Home page
         And the user should see products
 
-#     Scenario: Invalid User Login (Incorrect Password)
-#     Given the user is on the login page
-#     When the user enters their valid username "johndoe" and invalid password "wrongpassword"
-#     And clicks the login button
-#     Then the user should see an error message "Invalid username or password"
-#     And should remain on the login page
+    Scenario: Invalid User Login (Incorrect Password)
+        Given the user is on the login page
+        # When the user enters their valid username "standard_user" and invalid password "not_secret_sauce"
+        # And clicks the login button
+        # Then the user should see an error message
+        # And should remain on the login page
 
 #   Scenario: Invalid User Login (Incorrect Username)
 #     Given the user is on the login page
