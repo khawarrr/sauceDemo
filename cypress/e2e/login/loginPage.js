@@ -32,7 +32,16 @@ class LoginPage {
     getErrorMessage() {
         cy.get(ERROR_MESSAGE).contains('Username and password do not match any user in this service')
     }
+
+
+
+
+  
+
+
   }
+
+
   
   export default new LoginPage();
   

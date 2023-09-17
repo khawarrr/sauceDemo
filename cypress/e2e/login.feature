@@ -20,6 +20,7 @@ Feature: Login Functionality
         Then the user should be redirected to the Home page and the user should see products
 
 
+
 #   Scenario: Invalid User Login (Incorrect Username)
 #     Given the user is on the login page
 #     When the user enters an invalid username "nonexistentuser" and valid password "password123"
