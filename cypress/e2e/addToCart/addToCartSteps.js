@@ -17,8 +17,51 @@ Then("the user clicks on cart", ()=> {
 
 })
 
-And("the cart has one item added inside it", ()=> {
+And("the cart has an item added inside it", ()=> {
     AddToCart.verifyCart()
 
 })
 
+
+//checkout
+Given("the user clicks on the Checkout button", ()=> {
+    AddToCart.checkoutButton()
+
+})
+
+Then("the user is on the Checkout page", ()=> {
+    AddToCart.verifyCheckoutPage()
+
+})
+
+When("the user enters their first name as {string}", (firstName)=> {
+    AddToCart.enterFirstName(firstName)
+})
+
+And("the user enters their last name as {string}", (lastName)=> {
+    AddToCart.enterLastName(lastName)
+})
+
+And("the user enters their postal code as {string}", (postalCode)=> {
+    AddToCart.enterPostalCode(postalCode)
+}
+)
+And("the user clicks on the Continue button", ()=> {
+    AddToCart.clickContinueButton()
+})
+
+Then("the user is on the Checkout Overview page", ()=> {
+    AddToCart.verifyOverviewPage()
+})
+
+And("the user clicks on the Finish button", ()=> {
+    AddToCart.clickFinishButton()
+})
+
+And("the user receives a confirmation message", ()=> {
+    AddToCart.confirmationMessage()
+})
+
+And("the user clicks on the Back Home button", ()=> {
+    AddToCart.clickBackHomeButton()
+})

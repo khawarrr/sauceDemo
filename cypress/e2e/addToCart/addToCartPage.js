@@ -31,6 +31,56 @@ class AddToCart {
       cy.get('.cart_item').should('be.visible')
     }
 
+    /////////////////////////////////////checkout//////////////////////////////////////
+
+    checkoutButton() {
+      cy.get('[data-test="checkout"]').click()
+    }
+
+    verifyCheckoutPage() {
+      cy.get('.title').contains('Checkout: Your Information').should('be.visible')
+      cy.url().should('include', 'checkout-step-one.html');
+    }
+
+    enterFirstName(firstName) {
+      cy.get('[data-test="firstName"]').type(firstName)
+    }
+
+    enterLastName(lastName) {
+      cy.get('[data-test="lastName"]').type(lastName)
+    }
+    
+    enterPostalCode(postalCode) {
+      cy.get('[data-test="postalCode"]').type(postalCode)
+    }
+
+    clickContinueButton() {
+      cy.get('[data-test="continue"]').should('be.visible').click()
+    }
+
+    verifyOverviewPage() {
+      // confirm we are on the overview page
+    cy.get('.title').contains('Checkout: Overview').should('be.visible')
+    cy.url().should('include', 'checkout-step-two.html');
+    }
+
+    clickFinishButton() {
+      cy.get('[data-test="finish"]').should('be.visible').click()
+    }
+
+    confirmationMessage() {
+      // confirming the order has been placed
+    cy.get('#checkout_complete_container').contains('Thank you for your order!').should('be.visible');
+    cy.url().should('include', 'checkout-complete.html');
+
+    }
+
+    clickBackHomeButton() {
+      //take us back to inventory list
+      cy.get('[data-test="back-to-products"]').should('be.visible').click()
+    }
+
+
 }
 
 
